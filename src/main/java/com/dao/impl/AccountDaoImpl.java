@@ -26,7 +26,7 @@ public class AccountDaoImpl implements IAccountDao{
 			conn = dataSource.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
-			ps.setString(1, account.getId());
+			ps.setInt(1, account.getId());
 			ps.setString(2, account.getName());
 			ps.setString(3, account.getPwd());
 		
