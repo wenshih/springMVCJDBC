@@ -5,7 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>registered</title>
- <script src="<c:url value="/resources/theme/registered.js" />"></script>
+ <script src="<c:url value="/resources/theme/plugin/jquery-1.12.2.min.js" />"></script>
+ <script src="<c:url value="/resources/theme/js/registered.js" />"></script>
 </head>
 <body>
 	<div>
@@ -27,9 +28,8 @@
 		</div>
 	</div>
 	<div>
-		<button id="apply">Apply</button>
+		<button id="apply" onclick="save()">Apply</button>
+		<button id="return" onclick="returnPage()">Return</button>
 	</div>
-	<!-- <script type="text/javascript" src="/resources/theme/registered.js"></script> -->
-	
 </body>
 </html>

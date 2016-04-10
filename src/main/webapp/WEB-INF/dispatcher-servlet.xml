@@ -12,8 +12,10 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="com.controller" />
-
-	<!-- <mvc:resources mapping="/resources/**" location="/resources/theme/"/>-->
+	<context:annotation-config />
+	<!-- <mvc:resources mapping="/resources/**" location="/resources/theme/js/"/> -->
+	<mvc:resources mapping="/resources/**" location="/resources/"/>
+	<mvc:annotation-driven />
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
