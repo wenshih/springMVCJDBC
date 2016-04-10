@@ -7,7 +7,7 @@ $(document).ready(function() {
 	window.save = function(){
 		
 		console.log("save function");
-		var json = {"id": $("#pId").val() , "name": $("#name").val() , "pwd": $("#pwd").val()};
+		var json = {/*"id": $("#pId").val() ,*/ "name": $("#name").val() , "pwd": $("#pwd").val()};
 	
 		$.ajax({
 			type : 'POST',  

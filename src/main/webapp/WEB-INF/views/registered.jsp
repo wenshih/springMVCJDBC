@@ -9,12 +9,14 @@
  <script src="<c:url value="/resources/theme/js/registered.js" />"></script>
 </head>
 <body>
+	<!-- 
 	<div>
 		<label>ID</label>
 		<div>
 			<input id="pId" type="text">
 		</div>
 	</div>
+	 -->
 	<div>
 		<label>Name</label>
 		<div>
