@@ -30,6 +30,13 @@
 		</div>
 	</div>
 	<div>
+		<label>Email</label>
+		<div>
+			<input id="mail" type="email">
+			<button id="checkMail" onclick="checkMail()">Check mail</button>
+		</div>
+	</div>
+	<div>
 		<button id="apply" onclick="save()">Apply</button>
 		<button id="return" onclick="returnPage()">Return</button>
 	</div>
