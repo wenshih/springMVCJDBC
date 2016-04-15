@@ -3,3 +3,5 @@
 
 2.Primary key auto increment and change to int
 
+3.Check mail when registered
+
