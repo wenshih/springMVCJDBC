@@ -5,3 +5,5 @@
 
 3.Check mail when registered
 
+4.Check mail show image
+
