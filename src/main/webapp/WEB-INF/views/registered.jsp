@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>     
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
@@ -32,8 +33,12 @@
 	<div>
 		<label>Email</label>
 		<div>
-			<input id="mail" type="email">
+			<input id="mail" type="email" required>
+			<img id="check" src="<c:url value="/resources/theme/image/check.png" />" style="display: none;" width="20" height="20"/>
+			<img id="error" src="<c:url value="/resources/theme/image/error.png" />" style="display: none;" width="10" height="10"/>
+			<!-- style="visibility: hidden;" -->
 			<button id="checkMail" onclick="checkMail()">Check mail</button>
+			
 		</div>
 	</div>
 	<div>
