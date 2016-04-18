@@ -39,7 +39,6 @@ $(document).ready(function() {
 		console.log("check mail function");
 		
 		if($("#mail").val()!= null && $("#mail").val() != ""){
-			//check mail format
 			
 			console.log("check mail function ajax");
 			

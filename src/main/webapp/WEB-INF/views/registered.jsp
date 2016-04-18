@@ -10,14 +10,6 @@
  <script src="<c:url value="/resources/theme/js/registered.js" />"></script>
 </head>
 <body>
-	<!-- 
-	<div>
-		<label>ID</label>
-		<div>
-			<input id="pId" type="text">
-		</div>
-	</div>
-	 -->
 	<div>
 		<label>Name</label>
 		<div>
@@ -33,12 +25,10 @@
 	<div>
 		<label>Email</label>
 		<div>
-			<input id="mail" type="email" required>
+			<input id="mail" type="email">
 			<img id="check" src="<c:url value="/resources/theme/image/check.png" />" style="display: none;" width="20" height="20"/>
 			<img id="error" src="<c:url value="/resources/theme/image/error.png" />" style="display: none;" width="10" height="10"/>
-			<!-- style="visibility: hidden;" -->
 			<button id="checkMail" onclick="checkMail()">Check mail</button>
-			
 		</div>
 	</div>
 	<div>
