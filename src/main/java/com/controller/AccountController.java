@@ -64,4 +64,20 @@ public class AccountController {
 		return account;
 		
     }
+	
+	@RequestMapping(value="/login", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
+	public Account login(@RequestBody Account account) {
+		
+		try {
+			account = accountDao.login(account);
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return account;
+		
+    }
 }

@@ -90,6 +90,42 @@ public class AccountDaoImpl implements IAccountDao{
 		
 		return account;
 	}
+
+	public Account login(Account account) throws Throwable {
+		
+		String sql = "SELECT * FROM STOCK.ACCOUNT WHERE MAIL='"+account.getMail()+"' AND PWD='"+account.getPwd()+"'";
+		Connection conn = null;
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			String mailStr = null;
+			String pwdStr = null;
+			String nameStr = null;
+			if(rs.next()){
+				mailStr = rs.getString("mail");
+				pwdStr = rs.getString("pwd");
+				nameStr = rs.getString("name");
+			}
+			account.setMail(mailStr);
+			account.setPwd(pwdStr);
+			account.setName(nameStr);
+			ps.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+			
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
+		}
+		
+		return account;
+		
+	}
 		
 
 }

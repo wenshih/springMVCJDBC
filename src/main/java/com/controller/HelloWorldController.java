@@ -32,4 +32,18 @@ public class HelloWorldController {
 		ModelAndView view = new ModelAndView("registered");
 		return "registered";
 	}
+	
+	@RequestMapping("/login")
+	public String loginPage() {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("login");
+		return "login";
+	}
+	
+	@RequestMapping("/dashboard")
+	public String adminDashboardPage() {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("dashboard");
+		return "admin/dashboard";
+	}
 }
