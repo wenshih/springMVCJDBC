@@ -11,3 +11,7 @@
 5.Finish login, add "use strict", jsp change to UTF-8
 
 6.Add sort pic
+
+7.Add data tables plugins
+
+8.Add admin dashboard function
