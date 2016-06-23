@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -122,9 +125,40 @@ public class AccountDaoImpl implements IAccountDao{
 				} catch (SQLException e) {}
 			}
 		}
-		
 		return account;
+	}
+
+	public List<Account> getUser() throws Throwable {
 		
+		String sql = "SELECT * FROM STOCK.ACCOUNT WHERE ROLE_ID='2';";
+		Connection conn = null;
+		List<Account> accountList = new ArrayList();
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				Account account = new Account();
+				account.setMail(rs.getString("mail"));
+				account.setPwd(rs.getString("pwd"));
+				account.setName(rs.getString("name"));
+				account.setRole_id(rs.getInt("role_id"));
+				accountList.add(account);
+			}
+			
+			ps.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+			
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
+		}
+		return accountList;
 	}
 		
 

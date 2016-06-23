@@ -1,5 +1,8 @@
 package com.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -76,8 +79,21 @@ public class AccountController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return account;
+    }
+	
+	@RequestMapping(value="/getUser", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
+	public List<Account> getUser() {
 		
+		List<Account> accountList = new ArrayList();
+		try {
+			accountList = accountDao.getUser();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return accountList;
     }
 }
