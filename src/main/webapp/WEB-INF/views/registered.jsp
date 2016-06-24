@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>registered</title>
- <script src="<c:url value="/resources/theme/plugin/jquery-1.12.2.min.js" />"></script>
+ <script src="<c:url value="/resources/theme/plugin/jquery-1.12.3.min.js" />"></script>
  <script src="<c:url value="/resources/theme/js/registered.js" />"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 	<div>
 		<label>Password</label>
 		<div>
-			<input id="pwd" type="text">
+			<input id="pwd" type="password">
 		</div>
 	</div>
 	<div>

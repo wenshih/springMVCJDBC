@@ -96,4 +96,18 @@ public class AccountController {
 		}
 		return accountList;
     }
+	
+	@RequestMapping(value="/updateUser", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
+	public Account updateUser(@RequestBody Account account) {
+		
+		try {
+			account = accountDao.updateUser(account);
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return account;
+    }
 }

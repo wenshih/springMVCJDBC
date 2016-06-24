@@ -17,3 +17,5 @@
 8.Add admin dashboard function
 
 9.Modify user list page
+
+10.Add update user profile & change password type

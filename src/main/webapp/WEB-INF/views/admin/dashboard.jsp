@@ -34,7 +34,6 @@
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
-	
 	    <!-- Modal content-->
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -42,17 +41,17 @@
 	        <h4 class="modal-title">User Profile</h4>
 	      </div>
 	      <div class="modal-body">
-	        <!-- <p>Some text in the modal.</p> -->
 	        <div class="row">
 	        	<label class="col-sm-3 control-label">Name</label>
 	        	<div class="col-sm-8">
 			       <input type="text" id="name">
+			       <label id="id" style="visibility:hidden"></label>
 			    </div>	
 	        </div>
 	        <div class="row">
 	        	<label class="col-sm-3 control-label">Password</label>
 	        	<div class="col-sm-8">
-	        		<input type="text" id="pwd">
+	        		<input type="password" id="pwd">
 	        	</div>	
 	        </div>
 	        <div class="row">

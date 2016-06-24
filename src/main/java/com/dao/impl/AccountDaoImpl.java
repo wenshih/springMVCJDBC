@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,6 +139,7 @@ public class AccountDaoImpl implements IAccountDao{
 			
 			while(rs.next()){
 				Account account = new Account();
+				account.setId(rs.getInt("id"));
 				account.setMail(rs.getString("mail"));
 				account.setPwd(rs.getString("pwd"));
 				account.setName(rs.getString("name"));
@@ -159,6 +159,31 @@ public class AccountDaoImpl implements IAccountDao{
 			}
 		}
 		return accountList;
+	}
+
+	public Account updateUser(Account account) throws Throwable {
+		
+		String sql = "UPDATE STOCK.ACCOUNT SET PWD = ?, NAME=? WHERE ID = ?;";
+		Connection conn = null;
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, account.getPwd());
+			ps.setString(2, account.getName());
+			ps.setInt(3, account.getId());
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+			
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
+		}
+		return account;
 	}
 		
 

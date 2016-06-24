@@ -14,4 +14,6 @@ public interface IAccountDao {
 	
 	public List<Account> getUser() throws Throwable;
 	
+	public Account updateUser(Account account) throws Throwable;
+	
 }
