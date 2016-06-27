@@ -2,11 +2,11 @@
 $(document).ready(function() {
 
 	console.log("index.js");
-	
-	$("#loginOrRegistered").click(function(){
-		console.log("loginOrRegistered function");
-		$("#loginOrRegistered").parent().find("li").removeClass("active");
-		$("#loginOrRegistered").addClass("active");
+	/*
+	$("#login").click(function(){
+		console.log("login function");
+		$("#login").parent().find("li").removeClass("active");
+		$("#login").addClass("active");
 		$("#divBlock").show();
 	});
 	
@@ -16,6 +16,6 @@ $(document).ready(function() {
 		$("#home").addClass("active");
 		$("#divBlock").hide();
 	});
-	
+	*/
 	
 });

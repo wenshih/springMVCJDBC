@@ -14,7 +14,7 @@ $(document).ready(function() {
 		
 		if(mailFlag){
 			
-			var json = {"name": $("#name").val() , "pwd": $("#pwd").val(), "mail":$("#mail").val()};
+			var json = {"name": $("#name").val() , "pwd": $("#pwd").val(), "mail":$("#mail").val(), "role_id":"2"};
 			
 			$.ajax({
 				type : 'POST',  
@@ -39,7 +39,7 @@ $(document).ready(function() {
 	window.checkMail = function(){
 		console.log("check mail function");
 		
-		if($("#mail").val()!= null && $("#mail").val() != ""){
+		if($("#mail").val()!= null && $("#mail").val() != "" && $("#comPwd").val()!= null && $("#comPwd").val() != ""){
 			
 			console.log("check mail function ajax");
 			
@@ -70,11 +70,33 @@ $(document).ready(function() {
 		}
 		
 	}
+	//confirm password
+	$("#comPwd").change(function() {
+		console.log("comPwd function");
+		if($("#pwd").val() === $("#comPwd").val()){
+			$("#errorPwd").hide();
+    		$("#checkPwd").show();
+		}else{
+			$("#errorPwd").show();
+    		$("#checkPwd").hide();
+    		$("#comPwd").val("");
+		}
+	});
 	
 	//click "Return" button
+	/*
 	window.returnPage = function(){
 		console.log("returnPage function");
 		location.href = "http://localhost:8080/SpringMVCJDBC/";
 	}
-
+	*/
+	
+	//click "Clear" button
+	$("#clear").click(function(){
+		console.log("clearBtn function");
+		$("name").val("");
+		$("#pwd").val("");
+		$("#comPwd").val("");
+		$("#mail").val("");
+	});
 });

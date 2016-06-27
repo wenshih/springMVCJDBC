@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+.center {
+    text-align: center;
+    /*border: 3px solid green;*/
+}
+
+.labelDiv {
+  position: relative;
+  width: 5px;
+  left: 0;
+  /*top: Xpx*/ /* x to align nicely with the baseline of the text in the input */
+}
+.inputDiv {
+  margin-left: 120px;
+}
+
+.labelDiv2 {
+  position: relative;
+  width: 0px;
+  left: 123px;
+  /*top: Xpx*/ /* x to align nicely with the baseline of the text in the input */
+}
+
+.inputDiv2 {
+  margin-left: 247px;
+}
+
+.spanDiv2 {
+  /*background-color: yellow;*/
+  width: 120px; 
+  display: inline-block;
+}
+
+.labelDiv3 {
+  position: relative;
+  width: 200px;
+  left: 85px;
+}
+
+.inputDiv3 {
+  margin-left: 47px;
+}

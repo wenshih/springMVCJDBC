@@ -21,3 +21,9 @@
 10.Add update user profile & change password type
 
 11.Index add header menu
+
+12.Format bootstrap.min.css
+
+13.AccountDaoImpl insert add role_id
+
+14.Modify index, login, registered

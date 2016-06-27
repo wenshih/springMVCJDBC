@@ -5,27 +5,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>login</title>
+<link type="text/css" rel="stylesheet" href="<c:url value="/resources/theme/css/common.css" />"/>
+<link type="text/css" rel="stylesheet" href="<c:url value="/resources/theme/plugin/bootstrap.min.css" />"/>
 <script src="<c:url value="/resources/theme/plugin/jquery-1.12.3.min.js" />"></script>
+<script src="<c:url value="/resources/theme/plugin/bootstrap.min.js" />"></script>
 <script src="<c:url value="/resources/theme/js/login.js" /> "></script>
 </head>
 <body>
-	<div id="loginDiv">
-   		<div>
-			<label>Password</label>
-			<div>
-				<input id="pwd" type="password">
-			</div>
+	<div>
+		<ul class="nav nav-pills">
+			<li id="home" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Home</a></li>
+		    <li id="login" role="presentation" class="active"><a href="#">Login</a></li>
+		    <li id="registered" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/registered">Registered</a></li>
+		</ul>
+	</div>
+	<br>
+	<div id="loginDiv" class="center">
+		<div>
+			<label class="labelDiv">Password</label>
+			<input id="pwd" type="password" class="inputDiv">
 		</div>
 		<div>
-			<label>Email</label>
-			<div>
-				<input id="mail" type="email">
-			</div>
+			<label class="labelDiv">Email</label>
+			<input id="mail" type="email" class="inputDiv">
 		</div>
    	</div>
-   	<div>
-   		<button id="login" onclick="login()">Login</button>
-		<button id="return" onclick="returnPage()">Return</button>
+   	<br>
+   	<div class="center">
+		<button type="button" id="login" class="btn btn-success" onclick="login()">Login</button>
+		<!-- <button type="button" id="return" class="btn btn-info" onclick="returnPage()">Return</button> -->
+		<button type="button" id="clear" class="btn btn-default" onclick="clear()">Clear</button>
    	</div>
 </body>
 </html>

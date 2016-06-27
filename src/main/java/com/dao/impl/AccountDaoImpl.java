@@ -34,7 +34,7 @@ public class AccountDaoImpl implements IAccountDao{
 		
 	public void insert(Account account) {
 		
-		String sql = "INSERT INTO account (id, name, pwd, mail) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO account (id, name, pwd, mail, role_id) VALUES (?, ?, ?, ?, ?)";
 		Connection conn = null;
 		
 		try {
@@ -45,7 +45,7 @@ public class AccountDaoImpl implements IAccountDao{
 			ps.setString(2, account.getName());
 			ps.setString(3, account.getPwd());
 			ps.setString(4, account.getMail());
-			
+			ps.setInt(5, account.getRole_id());
 			ps.executeUpdate();
 			ps.close();
 			
