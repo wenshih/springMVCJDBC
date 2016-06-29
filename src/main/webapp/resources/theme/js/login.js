@@ -21,7 +21,12 @@ $(document).ready(function() {
 	            success : function(data) {
 	            	console.log("success");
 	            	if(data.name != null){
-	            		location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+data.name;
+	            		if(data.role_id === 1){
+	            			location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+data.name;
+	            		}else{
+	            			location.href = "http://localhost:8080/SpringMVCJDBC/userDashboard?name="+data.name;
+	            		}
+	            		
 	            	}else{
 	            		alert("查無此使用者,請重新輸入");
 	            	}

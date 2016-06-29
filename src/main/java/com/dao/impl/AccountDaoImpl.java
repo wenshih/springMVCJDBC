@@ -105,14 +105,17 @@ public class AccountDaoImpl implements IAccountDao{
 			String mailStr = null;
 			String pwdStr = null;
 			String nameStr = null;
+			int roleIdInt = 0;
 			if(rs.next()){
 				mailStr = rs.getString("mail");
 				pwdStr = rs.getString("pwd");
 				nameStr = rs.getString("name");
+				roleIdInt = rs.getInt("role_id");
 			}
 			account.setMail(mailStr);
 			account.setPwd(pwdStr);
 			account.setName(nameStr);
+			account.setRole_id(roleIdInt);
 			ps.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

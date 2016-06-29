@@ -15,7 +15,7 @@ $(document).ready(function() {
 		if(mailFlag){
 			
 			var json = {"name": $("#name").val() , "pwd": $("#pwd").val(), "mail":$("#mail").val(), "role_id":"2"};
-			
+			//always error function need to check
 			$.ajax({
 				type : 'POST',  
 				contentType: "application/json",
@@ -24,10 +24,17 @@ $(document).ready(function() {
 		        data : JSON.stringify(json),
 	            success : function(data) {
 	            	console.log("success");
+	            	//location.href = "http://localhost:8080/SpringMVCJDBC/user/insert";
+	            	location.href = "http://localhost:8080/SpringMVCJDBC/login";
 	            },
 				error : function(data) {
 		        	console.log("error");
+		        	if(data.status === 200){
+		        		//location.href = "http://localhost:8080/SpringMVCJDBC/user/insert";
+		        		location.href = "http://localhost:8080/SpringMVCJDBC/login";
+		        	}
 		        }
+		        
 	        });
 		}else{
 			alert("Please click check mail");

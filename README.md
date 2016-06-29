@@ -27,3 +27,14 @@
 13.AccountDaoImpl insert add role_id
 
 14.Modify index, login, registered
+
+15.Modify insert.jsp & add insert.js
+
+16.Modify HelloWorldController adminDashboardPage & add userDashboardPage
+
+17.Modify AccountDaoImpl login function add roleId
+
+18.Modify login.js login ajax, registered.js save function(need to check error)
+
+19.Add userDashboard.jsp & userDashboard.js
+
