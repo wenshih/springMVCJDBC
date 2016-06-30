@@ -16,4 +16,6 @@ public interface IAccountDao {
 	
 	public Account updateUser(Account account) throws Throwable;
 	
+	public Account deleteUser(int id) throws Throwable;
+	
 }

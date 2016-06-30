@@ -38,3 +38,5 @@
 
 19.Add userDashboard.jsp & userDashboard.js
 
+20.Admin dashboard add delete user & add user, add bootstrap-select plugin
+

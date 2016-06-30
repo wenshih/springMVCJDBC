@@ -56,7 +56,6 @@ public class AccountController {
 	public Account checkMail(@RequestBody String mail) {
 		//Boolean check = true;
 		Account account = new Account();
-		System.out.println(mail);
 		try {
 			account = accountDao.checkMail(mail);
 		} catch (Throwable e) {
@@ -104,6 +103,20 @@ public class AccountController {
 		
 		try {
 			account = accountDao.updateUser(account);
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return account;
+    }
+	
+	@RequestMapping(value="/deleteUser", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
+	public Account deleteUser(@RequestBody int id) {
+		Account account = new Account();
+		try {
+			account = accountDao.deleteUser(id);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

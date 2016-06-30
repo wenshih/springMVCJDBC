@@ -188,6 +188,29 @@ public class AccountDaoImpl implements IAccountDao{
 		}
 		return account;
 	}
+
+	public Account deleteUser(int id) throws Throwable {
+		Account account = new Account();
+		String sql = "DELETE FROM STOCK.ACCOUNT WHERE ID = '"+id+"';";
+		Connection conn = null;
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+			
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
+		}
+		
+		return account;
+	}
 		
 
 }
