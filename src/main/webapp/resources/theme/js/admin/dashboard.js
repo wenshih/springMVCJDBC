@@ -208,6 +208,12 @@ $(document).ready(function() {
         });
 	});
 	
+	$("#profile").click(function(){
+		console.log("profile function");
+		//var name = window.location.search.split("=")[1];//from url
+		//location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+name;
+	});
+	
 	$("#logOut").click(function(){
 		console.log("logOut function");
 		//remove cookie

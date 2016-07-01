@@ -63,4 +63,12 @@ public class HelloWorldController {
 		view.addObject("name", name);
 		return view;
 	}
+	
+	@RequestMapping("/profile")
+	public ModelAndView profilePage(@RequestParam(value = "name", required = true) String name) {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("profile");
+		view.addObject("name", name);
+		return view;
+	}
 }

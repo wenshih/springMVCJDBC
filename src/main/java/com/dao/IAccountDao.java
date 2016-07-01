@@ -19,4 +19,6 @@ public interface IAccountDao {
 	public Account deleteUser(int id) throws Throwable;
 	
 	public List<Account> getAdmin() throws Throwable;
+	
+	public Account getByNameAndMail(Account account) throws Throwable;
 }

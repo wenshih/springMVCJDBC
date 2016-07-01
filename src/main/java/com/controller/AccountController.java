@@ -138,4 +138,18 @@ public class AccountController {
 		}
 		return account;
     }
+	
+	@RequestMapping(value="/getByNameAndMail", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
+	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
+	public Account getByNameAndMail(@RequestBody Account account) {
+		
+		try {
+			account = accountDao.getByNameAndMail(account);
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return account;
+    }
 }

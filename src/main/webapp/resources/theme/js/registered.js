@@ -101,7 +101,7 @@ $(document).ready(function() {
 	//click "Clear" button
 	$("#clear").click(function(){
 		console.log("clearBtn function");
-		$("name").val("");
+		$("#name").val("");
 		$("#pwd").val("");
 		$("#comPwd").val("");
 		$("#mail").val("");

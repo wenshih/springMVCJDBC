@@ -245,6 +245,46 @@ public List<Account> getAdmin() throws Throwable {
 		
 		return account;
 	}
+
+	public Account getByNameAndMail(Account account) throws Throwable {
+		
+		String sql = "SELECT * FROM STOCK.ACCOUNT WHERE MAIL='"+account.getMail()+"' AND NAME='"+account.getName()+"'";
+		Connection conn = null;
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			int id = 0;
+			String mailStr = null;
+			String pwdStr = null;
+			String nameStr = null;
+			int roleIdInt = 0;
+			if(rs.next()){
+				id = rs.getInt("id");
+				mailStr = rs.getString("mail");
+				pwdStr = rs.getString("pwd");
+				nameStr = rs.getString("name");
+				roleIdInt = rs.getInt("role_id");
+			}
+			account.setId(id);
+			account.setMail(mailStr);
+			account.setPwd(pwdStr);
+			account.setName(nameStr);
+			account.setRole_id(roleIdInt);
+			ps.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+			
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
+		}
+		return account;
+	}
 		
 
 }

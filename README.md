@@ -45,3 +45,5 @@
 22.Login set cookie(email), logout remove cookie
 
 23.Add header menu
+
+24.Add profile page & modify registered.js

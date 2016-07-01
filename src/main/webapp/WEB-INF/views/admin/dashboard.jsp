@@ -22,7 +22,7 @@
 			<li><h5>Hello ${name}.</h5></li>
 			<li id="account" role="presentation" class="active"><a href="#">Account Management</a></li>
 			<li id="adminAccount" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/adminAccount?name=${name}">Admin Account</a></li>
-		    <li id="profile" role="presentation"><a href="#">Profile</a></li>
+		    <li id="profile" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/profile?name=${name}">Profile</a></li>
 		    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
 		</ul>
 	</div>
