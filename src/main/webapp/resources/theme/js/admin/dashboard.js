@@ -10,7 +10,6 @@ $(document).ready(function() {
 	var mailFlag = false;
 	
 	var roleChange = function(roleId){
-		console.log("roleChange function");
 		if(roleId === 1){
 			return "Admin";
 		}else if(roleId === 2){
@@ -19,30 +18,38 @@ $(document).ready(function() {
 	}
 	
 	var getUserFun = function(){
-		$.ajax({
-			  type: "GET",
-			  url: "http://localhost:8080/SpringMVCJDBC/getUser",
-			  dataType: "json",
-			  success : function(data) {
-				  
-				  console.log("success");
-				  userData = data;
-				  var elementId = $("#userTbody");
-				  var element = "";
-				  for(var i=0; i<data.length; i++){
-					  var role = roleChange(data[i].role_id);
-					  element = "<tr><td>"+data[i].name+"</td><td>"+data[i].mail+"</td><td>"+role+"</td>" +
-					  			"<td><button type=\"button\" class=\"btn btn-info btn-sm edit\" data-toggle=\"modal\" data-target=\"#myModal\">Edit</button> " +
-					  			"<button type=\"button\" class=\"btn btn-danger btn-sm delete\" data-toggle=\"modal\" data-target=\"#myModalDelete\">Delete</button></td></tr>";
-					  elementId.append(element);
-				  }
-				  $('#userTable').DataTable();
-		        	
-	        },
-			error : function(data) {
-	        	console.log("error");
-	        }
-		});
+		//get cookie
+	    var arr = document.cookie.split( "; " );
+	    if(arr != null && arr != ""){
+	    	
+	    	$.ajax({
+				  type: "GET",
+				  url: "http://localhost:8080/SpringMVCJDBC/getUser",
+				  dataType: "json",
+				  success : function(data) {
+					  
+					  console.log("success");
+					  userData = data;
+					  var elementId = $("#userTbody");
+					  var element = "";
+					  for(var i=0; i<data.length; i++){
+						  var role = roleChange(data[i].role_id);
+						  element = "<tr><td>"+data[i].name+"</td><td>"+data[i].mail+"</td><td>"+role+"</td>" +
+						  			"<td><button type=\"button\" class=\"btn btn-info btn-sm edit\" data-toggle=\"modal\" data-target=\"#myModal\">Edit</button> " +
+						  			"<button type=\"button\" class=\"btn btn-danger btn-sm delete\" data-toggle=\"modal\" data-target=\"#myModalDelete\">Delete</button></td></tr>";
+						  elementId.append(element);
+					  }
+					  $('#userTable').DataTable();
+			        	
+		        },
+				error : function(data) {
+		        	console.log("error");
+		        }
+			});
+	    }else{
+	    	//return null;
+	    	location.href = "http://localhost:8080/SpringMVCJDBC/";
+	    }
 	}
 	
 	getUserFun();
@@ -199,5 +206,14 @@ $(document).ready(function() {
 	        	console.log("error");
 	        }
         });
+	});
+	
+	$("#logOut").click(function(){
+		console.log("logOut function");
+		//remove cookie
+	    var d = new Date();
+	    d.setTime(d.getTime() - 1);
+	    var expires = "expires=" + d.toUTCString();
+	    document.cookie = "email=; expires=" + expires + '; path=/';
 	});
 });

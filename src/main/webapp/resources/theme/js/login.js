@@ -27,6 +27,13 @@ $(document).ready(function() {
 	            			location.href = "http://localhost:8080/SpringMVCJDBC/userDashboard?name="+data.name;
 	            		}
 	            		
+	            		//expire_days = 1; // 過期日期(天)
+	            		var d = new Date();
+	            	    //d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
+	            		d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+	            	    var expires = "expires=" + d.toUTCString();
+	            	    document.cookie = "email=" + data.mail + "; " + expires + "; path=/";
+	            	    
 	            	}else{
 	            		alert("查無此使用者,請重新輸入");
 	            	}
