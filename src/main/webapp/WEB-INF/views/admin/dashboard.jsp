@@ -21,13 +21,17 @@
 		<ul class="nav nav-pills">
 			<li><h5>Hello ${name}.</h5></li>
 			<li id="account" role="presentation" class="active"><a href="#">Account Management</a></li>
-			<li id="adminAccount" role="presentation"><a href="#">Admin Account</a></li>
+			<li id="adminAccount" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/adminAccount?name=${name}">Admin Account</a></li>
+		    <li id="profile" role="presentation"><a href="#">Profile</a></li>
 		    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
 		</ul>
 	</div>
 	<br>
 	<div>
 		<button id="addBtn" type="button" class="btn btn-success btn-sm add" data-toggle="modal" data-target="#myModalAdd">Add User</button>
+		<!-- <button type="button" class="btn btn-default btn-sm">
+		  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+		</button> -->
 	</div>
 	<br>
 	<div>

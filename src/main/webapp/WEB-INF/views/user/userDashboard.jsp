@@ -14,6 +14,13 @@
 </head>
 <%@ page isELIgnored="false"%>
 <body>
-	<h2>Hello ${name}.</h2>
+	<div class="center">
+		<ul class="nav nav-pills">
+			<li><h5>Hello ${name}.</h5></li>
+			<li id="profile" role="presentation" class="active"><a href="#">Profile</a></li>
+		    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
+		</ul>
+	</div>
+	<br>
 </body>
 </html>
