@@ -40,3 +40,8 @@
 
 20.Admin dashboard add delete user & add user, add bootstrap-select plugin
 
+21.Add admin account page
+
+22.Login set cookie(email), logout remove cookie
+
+23.Add header menu
