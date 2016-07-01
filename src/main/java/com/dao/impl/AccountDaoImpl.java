@@ -164,6 +164,40 @@ public class AccountDaoImpl implements IAccountDao{
 		return accountList;
 	}
 
+public List<Account> getAdmin() throws Throwable {
+		
+		String sql = "SELECT * FROM STOCK.ACCOUNT WHERE ROLE_ID='1';";
+		Connection conn = null;
+		List<Account> accountList = new ArrayList();
+		try {
+			conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				Account account = new Account();
+				account.setId(rs.getInt("id"));
+				account.setMail(rs.getString("mail"));
+				account.setPwd(rs.getString("pwd"));
+				account.setName(rs.getString("name"));
+				account.setRole_id(rs.getInt("role_id"));
+				accountList.add(account);
+			}
+			
+			ps.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+			
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
+		}
+		return accountList;
+	}
+
 	public Account updateUser(Account account) throws Throwable {
 		
 		String sql = "UPDATE STOCK.ACCOUNT SET PWD = ?, NAME=? WHERE ID = ?;";

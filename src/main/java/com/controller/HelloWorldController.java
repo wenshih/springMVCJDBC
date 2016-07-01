@@ -49,9 +49,17 @@ public class HelloWorldController {
 	}
 	
 	@RequestMapping("/dashboard")
-	public ModelAndView adminDashboardPage(@RequestParam(value = "name", required = true) String name) {
+	public ModelAndView dashboardPage(@RequestParam(value = "name", required = true) String name) {
 		// Name of your jsp file as parameter
 		ModelAndView view = new ModelAndView("admin/dashboard");
+		view.addObject("name", name);
+		return view;
+	}
+	
+	@RequestMapping("/adminAccount")
+	public ModelAndView adminAccountPage(@RequestParam(value = "name", required = true) String name) {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("admin/adminAccount");
 		view.addObject("name", name);
 		return view;
 	}

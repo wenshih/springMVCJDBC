@@ -96,6 +96,21 @@ public class AccountController {
 		return accountList;
     }
 	
+	@RequestMapping(value="/getAdmin", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
+	public List<Account> getAdmin() {
+		
+		List<Account> accountList = new ArrayList();
+		try {
+			accountList = accountDao.getAdmin();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return accountList;
+    }
+	
 	@RequestMapping(value="/updateUser", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
 	//The “json data” will be converted into this object, via @RequestBody.
 	@ResponseBody
