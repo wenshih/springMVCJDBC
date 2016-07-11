@@ -71,4 +71,12 @@ public class HelloWorldController {
 		view.addObject("name", name);
 		return view;
 	}
+	
+	@RequestMapping("/permission")
+	public ModelAndView permissionPage(@RequestParam(value = "name", required = true) String name) {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("admin/permission");
+		view.addObject("name", name);
+		return view;
+	}
 }

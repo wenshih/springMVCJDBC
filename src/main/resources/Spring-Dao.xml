@@ -6,5 +6,8 @@
 	<bean id="accountDao" class="com.dao.impl.AccountDaoImpl">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	<bean id="permissionDao" class="com.dao.impl.PermissionDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
 </beans>

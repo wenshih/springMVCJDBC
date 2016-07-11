@@ -84,6 +84,11 @@ $(document).ready(function() {
 		location.href = "http://localhost:8080/SpringMVCJDBC/adminAccount?name="+userData.name;
 	});
 	
+	$("#permission").click(function(){
+		console.log("permission function");
+		location.href = "http://localhost:8080/SpringMVCJDBC/permission?name="+userData.name;
+	});
+	
 	//click "Clear" button
 	$("#clear").click(function(){
 		console.log("clearBtn function");

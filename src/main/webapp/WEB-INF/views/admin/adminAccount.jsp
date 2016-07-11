@@ -22,7 +22,8 @@
 			<li><h5>Hello ${name}.</h5></li>
 			<li id="account" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/dashboard?name=${name}">Account Management</a></li>
 			<li id="adminAccount" role="presentation" class="active"><a href="#">Admin Account</a></li>
-		    <li id="profile" role="presentation"><a href="#">Profile</a></li>
+		    <li id="permission" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/permission?name=${name}">Permission</a></li>
+		    <li id="profile" role="presentation"><a href="#">Profile</a></li><!-- href in JS -->
 		    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
 		</ul>
 	</div>
