@@ -35,17 +35,30 @@ public class AccountController {
 		return account;
 	}
 	*/
-	@RequestMapping(value="/insert", method = RequestMethod.POST)
+	@RequestMapping(value="/insert", method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
 	//The “json data” will be converted into this object, via @RequestBody.
+	@ResponseBody
 	public Account insert(@RequestBody Account account) {
-			try {
-				if(!"".equals(account.getName()) && !"".equals(account.getPwd()) && !"".equals(account.getPwd())){
-					accountDao.insert(account);
+		
+		try {
+			if(!"".equals(account.getName()) && !"".equals(account.getPwd()) && !"".equals(account.getPwd())){
+				accountDao.insert(account);
+				
+				List<Account> accountList = new ArrayList();
+				if("1".equals(account.getRole_id())){
+					accountList = this.getAdmin();
+				}else{
+					accountList = this.getUser();
 				}
-			} catch (Throwable e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				for(Account acc: accountList){
+					if(acc.getMail().equals(account.getMail())){
+						account.setId(acc.getId());
+					}
+				}
 			}
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		
 		return account;
     }

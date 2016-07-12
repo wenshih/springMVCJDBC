@@ -34,7 +34,7 @@
 
 17.Modify AccountDaoImpl login function add roleId
 
-18.Modify login.js login ajax, registered.js save function(need to check error)
+18.Modify login.js login ajax, registered.js save function(modify)
 
 19.Add userDashboard.jsp & userDashboard.js
 
@@ -47,3 +47,7 @@
 23.Add header menu
 
 24.Add profile page & modify registered.js
+
+25.Add permission page
+
+26.inculde header
