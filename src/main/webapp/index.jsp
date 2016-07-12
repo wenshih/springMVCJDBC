@@ -10,6 +10,8 @@
 <script src="<c:url value="/resources/theme/plugin/jquery-1.12.3.min.js" />"></script>
 <script src="<c:url value="/resources/theme/plugin/bootstrap.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/theme/js/index.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/theme/js/commonfunc/browser.js" />"></script>
+
 </head>
 <%@ page isELIgnored="false"%>
 <body>

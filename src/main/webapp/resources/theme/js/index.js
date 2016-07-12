@@ -18,4 +18,7 @@ $(document).ready(function() {
 	});
 	*/
 	
+	var version = browserVersion();
+	console.log(version);
+		
 });

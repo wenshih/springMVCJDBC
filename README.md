@@ -51,3 +51,5 @@
 25.Add permission page
 
 26.inculde header
+
+27.Add browser version
