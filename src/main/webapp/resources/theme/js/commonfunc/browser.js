@@ -5,7 +5,7 @@
 
 function browserVersion(){
 	
-	//console.log(window.navigator.userAgent);
+	console.log(window.navigator.userAgent);
 	var userAgent = navigator.userAgent.toLowerCase(),
     browser = "",
     version = 0;
@@ -21,12 +21,16 @@ function browserVersion(){
 	    if (older > 0) {
 	    	ver = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
 	    }
-	    // IE 11 => return version number
-	    var trident = ua.indexOf('Trident/');
-	    if (trident > 0) {
-	        var rv = ua.indexOf('rv:');
-	        ver = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+	    //IE 10 or older has Trident too
+	    if(ver === 0){
+	    	// IE 11 => return version number
+		    var trident = ua.indexOf('Trident/');
+		    if (trident > 0) {
+		        var rv = ua.indexOf('rv:');
+		        ver = parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+		    }
 	    }
+	    
 	    // Edge (IE 12+) => return version number
 	    var edge = ua.indexOf('Edge/');
 	    if (edge > 0) {
