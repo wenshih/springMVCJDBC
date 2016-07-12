@@ -7,8 +7,9 @@ $(document).ready(function() {
 
 	console.log("permission.js");
 	
-	var userData = "";
 	var permissionData = "";
+	
+	$('.selectpickerAdd').selectpicker('refresh');
 	
 	var roleChange = function(roleId){
 		if(roleId === 1){
@@ -22,27 +23,6 @@ $(document).ready(function() {
 	if(arr === null && arr === ""){
     	return;
     }else{
-    	//get login admin data
-    	var name = window.location.search.split("=")[1];//from url
-    	var mail = document.cookie.split("=")[1];//from cookie
-    	$("#greeting").html("Hello "+name+".");
-    	
-    	var json = {"name": name, "mail":mail};
-		
-		$.ajax({
-			type : 'POST',  
-			contentType: "application/json",
-	        url: 'http://localhost:8080/SpringMVCJDBC/getByNameAndMail',
-	        dataType : 'json', 
-	        data : JSON.stringify(json),
-            success : function(data) {
-            	console.log("success");
-            	userData = data;
-            },
-			error : function(data) {
-	        	console.log("error");
-	        }
-        });
 		//get pages
 		$.ajax({
 			  type: "GET",
@@ -78,25 +58,11 @@ $(document).ready(function() {
 		});
     }
 	
-	$("#account").click(function(){
-		console.log("account function");
-		location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+userData.name;
-	});
-	
-	$("#adminAccount").click(function(){
-		console.log("adminAccount function");
-		location.href = "http://localhost:8080/SpringMVCJDBC/adminAccount?name="+userData.name;
-	});
-	
-	$("#profile").click(function(){
-		console.log("profile function");
-		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
-	});
 	//click apply response always error, solve is back-end call getPermission
 	$("#apply").click(function(){
 		console.log("apply function");
 		
-		var json = {"page": $("#pageAdd").val(), "permission":$('input[name="permissionAdd"]:checked').val(), "role_id":$(".selectpicker").val()};
+		var json = {"page": $("#pageAdd").val(), "permission":$('input[name="permissionAdd"]:checked').val(), "role_id":$(".selectpickerAdd").val()};
 		
 		$.ajax({
 			type : 'POST',  
@@ -138,7 +104,7 @@ $(document).ready(function() {
 				}
 				//bootstrap select option default value
 				$('select[name=selValue]').val(permissionData[i].role_id);
-				$('.selectpicker').selectpicker('refresh')
+				$('.selectpickerUpd').selectpicker('refresh');
 			}
 			
 		}

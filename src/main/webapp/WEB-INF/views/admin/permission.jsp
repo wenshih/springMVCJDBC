@@ -14,16 +14,13 @@
 <script src="<c:url value="/resources/theme/plugin/bootstrap.min.js" />"></script>
 <script src="<c:url value="/resources/theme/plugin/bootstrap-select.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/theme/js/admin/permission.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/theme/js/admin/header.js" />"></script>
 </head>
 <body>
 	<div class="center">
 		<ul class="nav nav-pills">
 			<li><h5 id="greeting">Hello ${name}.</h5></li>
-			<li id="account" role="presentation"><a href="#">Account Management</a></li><!-- href in JS -->
-			<li id="adminAccount" role="presentation"><a href="#">Admin Account</a></li><!-- href in JS -->
-		    <li id="permission" role="presentation" class="active"><a href="#">Permission</a></li>
-		    <li id="profile" role="presentation"><a href="#">Profile</a></li><!-- href in JS -->
-		    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
+			<c:import url="header.jsp"></c:import>
 		</ul>
 	</div>
 	<br>
@@ -75,7 +72,13 @@
 	        <div class="row">
 	        	<label class="col-sm-3 control-label">Role</label>
 	        	<div class="col-sm-8">
-	        		<select class="selectpicker" data-width="100px">
+	        		<!-- 
+	        		<select name="selAdd" class="selectpicker" data-width="100px">
+	        			<option value="1">Admin</option>
+					    <option value="2">User</option>
+					</select>
+					 -->
+					 <select class="selectpickerAdd" data-width="100px">
 	        			<option value="1">Admin</option>
 					    <option value="2">User</option>
 					</select>
@@ -117,7 +120,13 @@
 	        <div class="row">
 	        	<label class="col-sm-3 control-label">Role</label>
 	        	<div class="col-sm-8">
+	        		<!-- 
 	        		<select name="selValue" class="selectpicker selectpickerUpd" data-width="100px">
+	        			<option value="1">Admin</option>
+					    <option value="2">User</option>
+					</select>
+					 -->
+					 <select name="selValue" class="selectpickerUpd" data-width="100px">
 	        			<option value="1">Admin</option>
 					    <option value="2">User</option>
 					</select>

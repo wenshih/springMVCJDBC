@@ -9,6 +9,8 @@ $(document).ready(function() {
 	var userData = "";
 	var mailFlag = false;
 	
+	$('.selectpickerAddUser').selectpicker('refresh');
+	
 	var roleChange = function(roleId){
 		if(roleId === 1){
 			return "Admin";
