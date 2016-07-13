@@ -21,11 +21,7 @@ $(document).ready(function() {
 	            success : function(data) {
 	            	console.log("success");
 	            	if(data.name != null){
-	            		if(data.role_id === 1){
-	            			location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+data.name;
-	            		}else{
-	            			location.href = "http://localhost:8080/SpringMVCJDBC/userDashboard?name="+data.name;
-	            		}
+	            		location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+data.name;
 	            		
 	            		//expire_days = 1; // 過期日期(天)
 	            		var d = new Date();

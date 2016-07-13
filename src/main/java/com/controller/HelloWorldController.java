@@ -33,14 +33,6 @@ public class HelloWorldController {
 		return "registered";
 	}
 	
-	@RequestMapping("/userDashboard")
-	public ModelAndView userDashboardPage(@RequestParam(value = "name", required = true) String name) {
-		// Name of your jsp file as parameter
-		ModelAndView view = new ModelAndView("user/userDashboard");
-		view.addObject("name", name);
-		return view;
-	}
-	
 	@RequestMapping("/login")
 	public String loginPage() {
 		// Name of your jsp file as parameter
@@ -51,7 +43,15 @@ public class HelloWorldController {
 	@RequestMapping("/dashboard")
 	public ModelAndView dashboardPage(@RequestParam(value = "name", required = true) String name) {
 		// Name of your jsp file as parameter
-		ModelAndView view = new ModelAndView("admin/dashboard");
+		ModelAndView view = new ModelAndView("dashboard");
+		view.addObject("name", name);
+		return view;
+	}
+	
+	@RequestMapping("/userAccount")
+	public ModelAndView userAccountPage(@RequestParam(value = "name", required = true) String name) {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("admin/userAccount");
 		view.addObject("name", name);
 		return view;
 	}

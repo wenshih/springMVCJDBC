@@ -25,13 +25,14 @@ $(document).ready(function() {
 		contentType: "application/json",
         url: 'http://localhost:8080/SpringMVCJDBC/getByNameAndMail',
         dataType : 'json', 
+        async: false,// 先執行完後，再跑下面的程式，如果不寫此參數，jQuery預設AJAX為異步執行
         data : JSON.stringify(json),
         success : function(data) {
-        	console.log("success");
+        	console.log("getByNameAndMail success");
         	userData = data;
         },
 		error : function(data) {
-        	console.log("error");
+        	console.log("getByNameAndMail error");
         }
     });
 	
@@ -41,33 +42,57 @@ $(document).ready(function() {
 		  type: "GET",
 		  url: "http://localhost:8080/SpringMVCJDBC/getPermission",
 		  dataType: "json",
+		  async: false,
 		  success : function(data) {
-			  console.log("success");
+			  console.log("getPermission success");
 			  
-			  for(var i=0; i<data.length; i++){
-				  if(data[i].permission === 1 && userData.role_id == data[i].role_id){
-					  $("#"+data[i].page).hide();
-					  
+			  if(userData.role_id === 1){
+				  $("#header").show();
+				  $("#userHeader").hide();
+				  for(var i=0; i<data.length; i++){
+					  if(data[i].permission === 1 && userData.role_id == data[i].role_id){
+						  $("#"+data[i].page).hide();
+					  }
+				  }
+			  }else{
+				  $("#header").hide();
+				  $("#userHeader").show();
+				  for(var i=0; i<data.length; i++){
+					  if(data[i].permission === 1 && userData.role_id == data[i].role_id){
+						  switch (data[i].page){
+						  	case "profile":
+						  		$("#userProfile").hide();
+						  		break;
+						  }
+					  }
 				  }
 			  }
+			  
         },
 		error : function(data) {
         	console.log("error");
         }
 	});
 
-
+	//admin header
 	function removeClass(){
 		if($("#header li").hasClass("active")){
 			$("#header li").removeClass("active");
 		}
 	}
 	
-	$("#account").click(function(){
-		console.log("account function");
+	$("#dashboard").click(function(){
+		console.log("dashboard function");
 		removeClass();
-		$("#account").addClass("active");
+		$("#dashboard").addClass("active");
 		location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+userData.name;
+	});
+	
+	$("#userAccount").click(function(){
+		console.log("userAccount function");
+		removeClass();
+		$("#userAccount").addClass("active");
+		location.href = "http://localhost:8080/SpringMVCJDBC/userAccount?name="+userData.name;
 	});
 	
 	$("#adminAccount").click(function(){
@@ -89,5 +114,29 @@ $(document).ready(function() {
 		removeClass();
 		$("#profile").addClass("active")
 		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
+	});
+	
+	//user header
+	$("#userDashboard").click(function(){
+		console.log("userDashboard function");
+		removeClass();
+		$("#userDashboard").addClass("active");
+		location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+userData.name;
+	});
+	
+	$("#userProfile").click(function(){
+		console.log("userProfile function");
+		removeClass();
+		$("#userProfile").addClass("active")
+		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
+	});
+	
+	$("#logOut").click(function(){
+		console.log("logOut function");
+		//remove cookie
+	    var d = new Date();
+	    d.setTime(d.getTime() - 1);
+	    var expires = "expires=" + d.toUTCString();
+	    document.cookie = "email=; expires=" + expires + '; path=/';
 	});
 });

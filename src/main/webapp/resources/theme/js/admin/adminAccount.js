@@ -9,7 +9,7 @@ $(document).ready(function() {
 	var userData = "";
 	var mailFlag = false;
 	
-	$('.selectpickerAddAdmin').selectpicker('refresh');
+	//$('.selectpickerAddAdmin').selectpicker('refresh');
 	
 	var roleChange = function(roleId){
 		if(roleId === 1){

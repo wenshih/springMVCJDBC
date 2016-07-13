@@ -74,21 +74,6 @@ $(document).ready(function() {
 		}
 	});
 	
-	$("#account").click(function(){
-		console.log("account function");
-		location.href = "http://localhost:8080/SpringMVCJDBC/dashboard?name="+userData.name;
-	});
-	
-	$("#adminAccount").click(function(){
-		console.log("adminAccount function");
-		location.href = "http://localhost:8080/SpringMVCJDBC/adminAccount?name="+userData.name;
-	});
-	
-	$("#permission").click(function(){
-		console.log("permission function");
-		location.href = "http://localhost:8080/SpringMVCJDBC/permission?name="+userData.name;
-	});
-	
 	//click "Clear" button
 	$("#clear").click(function(){
 		console.log("clearBtn function");
@@ -96,5 +81,14 @@ $(document).ready(function() {
 		$("#comPwd").val("");
 		$("#checkPwd").hide();
 		$("#errorPwd").hide();
+	});
+	
+	$("#logOut").click(function(){
+		console.log("logOut function");
+		//remove cookie
+	    var d = new Date();
+	    d.setTime(d.getTime() - 1);
+	    var expires = "expires=" + d.toUTCString();
+	    document.cookie = "email=; expires=" + expires + '; path=/';
 	});
 });

@@ -13,14 +13,19 @@
 <script src="<c:url value="/resources/theme/plugin/jquery.dataTables.min.js" />"></script>
 <script src="<c:url value="/resources/theme/plugin/bootstrap.min.js" />"></script>
 <script src="<c:url value="/resources/theme/plugin/bootstrap-select.min.js" />"></script>
-<%-- <script type="text/javascript" src="<c:url value="/resources/theme/js/admin/header.js" />"></script> --%>
 </head>
 <body>
 	<ul id="header" class="nav nav-pills">
-		<li id="account" role="presentation"><a href="#">Account Management</a></li>
+		<li id="dashboard" role="presentation"><a href="#">Dashboard</a></li>
+		<li id="userAccount" role="presentation"><a href="#">User Account</a></li><!--  Management -->
 		<li id="adminAccount" role="presentation"><a href="#">Admin Account</a></li>
 	    <li id="permission" role="presentation"><a href="#">Permission</a></li>
 	    <li id="profile" role="presentation"><a href="#">Profile</a></li>
+	    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
+	</ul>
+	<ul id="userHeader" class="nav nav-pills">
+		<li id="userDashboard" role="presentation"><a href="#">Dashboard</a></li>
+	    <li id="userProfile" role="presentation"><a href="#">Profile</a></li>
 	    <li id="logOut" role="presentation"><a href="http://localhost:8080/SpringMVCJDBC/">Log Out</a></li>
 	</ul>
 </body>

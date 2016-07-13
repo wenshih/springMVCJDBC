@@ -5,11 +5,11 @@
 "use strict";
 $(document).ready(function() {
 
-	console.log("dashboard.js");
+	console.log("user account.js");
 	var userData = "";
 	var mailFlag = false;
 	
-	$('.selectpickerAddUser').selectpicker('refresh');
+	//$('.selectpickerAddUser').selectpicker('refresh');
 	
 	var roleChange = function(roleId){
 		if(roleId === 1){

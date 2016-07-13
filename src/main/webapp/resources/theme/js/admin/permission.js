@@ -9,7 +9,7 @@ $(document).ready(function() {
 	
 	var permissionData = "";
 	
-	$('.selectpickerAdd').selectpicker('refresh');
+	//$('.selectpickerAdd').selectpicker('refresh');
 	
 	var roleChange = function(roleId){
 		if(roleId === 1){
@@ -48,6 +48,7 @@ $(document).ready(function() {
 						  //uncheck
 						  $("input[name=\"permission\"]:eq("+i+")").prop("checked", false);
 					  }
+					  $("input[name=\"permission\"]:eq("+i+")").attr("disabled", true);
 				  }
 				  $('#permissionTable').DataTable();
 		        	
@@ -102,9 +103,15 @@ $(document).ready(function() {
 				}else{
 					$("input[name=\"permissionUpd\"]:eq(1)").prop("checked", true);
 				}
+				
+				if(permissionData[i].page === "dashboard"){
+					$("input[name=\"permissionUpd\"]:eq(0)").attr("disabled", true);
+					$("input[name=\"permissionUpd\"]:eq(1)").attr("disabled", true);
+				}
+				
 				//bootstrap select option default value
 				$('select[name=selValue]').val(permissionData[i].role_id);
-				$('.selectpickerUpd').selectpicker('refresh');
+				//$('.selectpickerUpd').selectpicker('refresh');
 			}
 			
 		}

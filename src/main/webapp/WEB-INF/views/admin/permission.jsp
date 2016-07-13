@@ -14,13 +14,13 @@
 <script src="<c:url value="/resources/theme/plugin/bootstrap.min.js" />"></script>
 <script src="<c:url value="/resources/theme/plugin/bootstrap-select.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/theme/js/admin/permission.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/theme/js/admin/header.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/theme/js/header.js" />"></script>
 </head>
 <body>
 	<div class="center">
 		<ul class="nav nav-pills">
 			<li><h5 id="greeting">Hello ${name}.</h5></li>
-			<c:import url="header.jsp"></c:import>
+			<c:import url="../header.jsp"></c:import>
 		</ul>
 	</div>
 	<br>
