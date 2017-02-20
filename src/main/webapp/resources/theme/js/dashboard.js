@@ -103,9 +103,17 @@ $(document).ready(function() {
 		console.log("dashProfle function");
 		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
 	});
+	$("#dashStock").click(function(){
+		console.log("dashStockList function");
+		location.href = "http://localhost:8080/SpringMVCJDBC/stock?name="+userData.name;
+	});
 	//user page
 	$("#userDashProfle").click(function(){
 		console.log("userDashProfle function");
 		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
+	});
+	$("#userDashStock").click(function(){
+		console.log("userDashStock function");
+		location.href = "http://localhost:8080/SpringMVCJDBC/stock?name="+userData.name;
 	});
 });

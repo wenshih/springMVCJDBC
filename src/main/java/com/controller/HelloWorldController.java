@@ -71,6 +71,13 @@ public class HelloWorldController {
 		view.addObject("name", name);
 		return view;
 	}
+	@RequestMapping("/stock")
+	public ModelAndView stockPage(@RequestParam(value = "name", required = true) String name) {
+		// Name of your jsp file as parameter
+		ModelAndView view = new ModelAndView("stock");
+		view.addObject("name", name);
+		return view;
+	}
 	
 	@RequestMapping("/permission")
 	public ModelAndView permissionPage(@RequestParam(value = "name", required = true) String name) {

@@ -115,6 +115,12 @@ $(document).ready(function() {
 		$("#profile").addClass("active")
 		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
 	});
+	$("#stock").click(function(){
+		console.log("stock function");
+		removeClass();
+		$("#stock").addClass("active")
+		location.href = "http://localhost:8080/SpringMVCJDBC/stock?name="+userData.name;
+	});
 	
 	//user header
 	$("#userDashboard").click(function(){
@@ -129,6 +135,12 @@ $(document).ready(function() {
 		removeClass();
 		$("#userProfile").addClass("active")
 		location.href = "http://localhost:8080/SpringMVCJDBC/profile?name="+userData.name;
+	});
+	$("#userStock").click(function(){
+		console.log("userStock function");
+		removeClass();
+		$("#userStock").addClass("active")
+		location.href = "http://localhost:8080/SpringMVCJDBC/stock?name="+userData.name;
 	});
 	
 	$("#logOut").click(function(){

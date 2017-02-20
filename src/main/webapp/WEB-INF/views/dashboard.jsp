@@ -43,6 +43,9 @@
 					<ul>
 						<li id="dashProfle" class="dashboardLi"><a href="#">Profile</a></li>
 					</ul>
+					<ul>
+						<li id="dashStock" class="dashboardLi"><a href="#">Stock</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -54,6 +57,9 @@
 				<div>
 					<ul>
 						<li id="userDashProfle" class="dashboardLi"><a href="#">Profile</a></li>
+					</ul>
+					<ul>
+						<li id="userDashStock" class="dashboardLi"><a href="#">Stock</a></li>
 					</ul>
 				</div>
 			</div>
